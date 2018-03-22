@@ -11,8 +11,8 @@ describe('phoneList', function() {
 
     beforeEach(inject(function($componentController, _$httpBackend_) {
       $httpBackend = _$httpBackend_;
-      $httpBackend.expectGET('phones/phones.json')
-                  .respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+      $httpBackend.expectGET('http://jsonplaceholder.typicode.com/users')
+                  .respond([{username: 'Bret'}, {username: 'Kamren'}]);
 
       ctrl = $componentController('phoneList');
     }));
@@ -23,11 +23,11 @@ describe('phoneList', function() {
       expect(ctrl.phones).toEqual([]);
 
       $httpBackend.flush();
-      expect(ctrl.phones).toEqual([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
+      expect(ctrl.phones).toEqual([{username: 'Bret'}, {username: 'Kamren'}]);
     });
 
     it('should set a default value for the `orderProp` property', function() {
-      expect(ctrl.orderProp).toBe('age');
+      expect(ctrl.orderProp).toBe('name');
     });
 
   });

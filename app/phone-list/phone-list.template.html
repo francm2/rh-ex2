@@ -14,7 +14,7 @@
         <tr ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp">
           <td href="#!/phones/{{phone.id}}">{{phone.name}}</td>
           <td>{{phone.username}}</td>
-          <td>{{phone.email}}</td>
+          <td><a href="mailto:{{phone.email}}">{{phone.email}}</a></td>
           <td>
             <div>{{phone.address.street}}, {{phone.address.suite}}</div>
             <div>{{phone.address.city}}, {{phone.address.zipcode}}</div>

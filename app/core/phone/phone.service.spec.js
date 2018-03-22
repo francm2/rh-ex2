@@ -20,7 +20,7 @@ describe('Phone', function() {
   // Instantiate the service and "train" `$httpBackend` before each test
   beforeEach(inject(function(_$httpBackend_, _Phone_) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('phones/phones.json').respond(phonesData);
+    $httpBackend.expectGET('http://jsonplaceholder.typicode.com/users').respond(phonesData);
 
     Phone = _Phone_;
   }));
