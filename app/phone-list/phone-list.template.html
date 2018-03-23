@@ -12,7 +12,7 @@
         </thead>
         <tbody>
         <tr ng-repeat="phone in $ctrl.phones | filter:$ctrl.query | orderBy:$ctrl.orderProp">
-          <td href="#!/phones/{{phone.id}}">{{phone.name}}</td>
+          <td><a href="#!/phones/{{phone.id}}">{{phone.name}}</a></td>
           <td>{{phone.username}}</td>
           <td><a href="mailto:{{phone.email}}">{{phone.email}}</a></td>
           <td>
