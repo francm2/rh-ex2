@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('core.phone')
+  .module('core.user')
   .factory('Phone', ['$resource',
   function($resource) {
     return $resource('http://jsonplaceholder.typicode.com/users/:userId', {userId: '@id'}, {
