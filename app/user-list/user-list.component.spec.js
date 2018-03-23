@@ -1,12 +1,12 @@
 'use strict';
 
-describe('phoneList', function() {
+describe('userList', function() {
 
   // Load the module that contains the `phoneList` component before each test
-  beforeEach(module('phoneList'));
+  beforeEach(module('userList'));
 
   // Test the controller
-  describe('PhoneListController', function() {
+  describe('UserListController', function() {
     var $httpBackend, ctrl;
 
     beforeEach(inject(function($componentController, _$httpBackend_) {
@@ -14,16 +14,16 @@ describe('phoneList', function() {
       $httpBackend.expectGET('http://jsonplaceholder.typicode.com/users')
                   .respond([{username: 'Bret'}, {username: 'Kamren'}]);
 
-      ctrl = $componentController('phoneList');
+      ctrl = $componentController('userList');
     }));
 
-    it('should create a `phones` property with 2 phones fetched with `$http`', function() {
+    it('should create a users property with 2 users fetched with `$http`', function() {
       jasmine.addCustomEqualityTester(angular.equals);
 
-      expect(ctrl.phones).toEqual([]);
+      expect(ctrl.users).toEqual([]);
 
       $httpBackend.flush();
-      expect(ctrl.phones).toEqual([{username: 'Bret'}, {username: 'Kamren'}]);
+      expect(ctrl.users).toEqual([{username: 'Bret'}, {username: 'Kamren'}]);
     });
 
     it('should set a default value for the `orderProp` property', function() {

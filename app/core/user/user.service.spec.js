@@ -1,12 +1,12 @@
 'use strict';
 
-describe('Phone', function() {
+describe('User', function() {
   var $httpBackend;
-  var Phone;
-  var phonesData = [
-    {name: 'Phone X'},
-    {name: 'Phone Y'},
-    {name: 'Phone Z'}
+  var User;
+  var userData = [
+    {name: 'User X'},
+    {name: 'User Y'},
+    {name: 'User Z'}
   ];
 
   // Add a custom equality tester before each test
@@ -14,15 +14,15 @@ describe('Phone', function() {
     jasmine.addCustomEqualityTester(angular.equals);
   });
 
-  // Load the module that contains the `Phone` service before each test
+  // Load the module that contains the `User` service before each test
   beforeEach(module('core.user'));
 
   // Instantiate the service and "train" `$httpBackend` before each test
-  beforeEach(inject(function(_$httpBackend_, _Phone_) {
+  beforeEach(inject(function(_$httpBackend_, _userService_) {
     $httpBackend = _$httpBackend_;
-    $httpBackend.expectGET('http://jsonplaceholder.typicode.com/users').respond(phonesData);
+    $httpBackend.expectGET('http://jsonplaceholder.typicode.com/users').respond(userData);
 
-    Phone = _Phone_;
+    User = _userService_;
   }));
 
   // Verify that there are no outstanding expectations or requests after each test
@@ -31,13 +31,13 @@ describe('Phone', function() {
     $httpBackend.verifyNoOutstandingRequest();
   });
 
-  it('should fetch the phones data from `/phones/phones.json`', function() {
-    var phones = Phone.query();
+  it('should fetch the user data from `http://jsonplaceholder.typicode.com/users`', function() {
+    var users = User.query();
 
-    expect(phones).toEqual([]);
+    expect(users).toEqual([]);
 
     $httpBackend.flush();
-    expect(phones).toEqual(phonesData);
+    expect(users).toEqual(userData);
   });
 
 });
