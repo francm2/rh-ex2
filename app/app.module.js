@@ -6,5 +6,5 @@ angular.module('userApp', [
   'ngRoute',
   'core',
   'phoneDetail',
-  'phoneList'
+  'userList'
 ]);
