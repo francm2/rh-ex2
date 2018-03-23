@@ -5,6 +5,6 @@ angular.module('userApp', [
   'ngAnimate',
   'ngRoute',
   'core',
-  'phoneDetail',
+  'userDetail',
   'userList'
 ]);

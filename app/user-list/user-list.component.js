@@ -7,7 +7,7 @@ angular
     templateUrl: 'user-list/user-list.template.html',
     controller: ['userService',
       function PhoneListController(userService) {
-        this.phones = userService.query();
+        this.users = userService.query();
         this.orderProp = 'name';
       }
     ]

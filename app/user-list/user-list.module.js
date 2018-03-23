@@ -1,4 +1,4 @@
 'use strict';
 
-// Define the `phoneList` module
+// Define the userList module
 angular.module('userList', ['core.user']);
