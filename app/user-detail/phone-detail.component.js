@@ -5,11 +5,11 @@ angular
   .module('phoneDetail')
   .component('phoneDetail', {
     templateUrl: 'user-detail/phone-detail.template.html',
-    controller: ['$routeParams', '$scope', 'Phone',
-      function PhoneDetailController($routeParams, $scope, Phone) {
+    controller: ['$routeParams', '$scope', 'userService',
+      function PhoneDetailController($routeParams, $scope, userService) {
 
         // Add the user to scope to access from HTML
-        this.phone = Phone.query({
+        this.phone = userService.query({
           id: $routeParams.userId
         }).$promise.then(function(user) {
             $scope.user = user[0];
