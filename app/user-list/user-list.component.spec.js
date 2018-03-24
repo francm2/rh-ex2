@@ -2,7 +2,7 @@
 
 describe('userList', function() {
 
-  // Load the module that contains the `phoneList` component before each test
+  // Load the module that contains the userList component before each test
   beforeEach(module('userList'));
 
   // Test the controller

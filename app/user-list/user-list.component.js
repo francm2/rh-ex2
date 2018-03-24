@@ -6,7 +6,7 @@ angular
   .component('userList', {
     templateUrl: 'user-list/user-list.template.html',
     controller: ['userService',
-      function PhoneListController(userService) {
+      function UserListController(userService) {
         this.users = userService.query();
         this.orderProp = 'name';
       }
